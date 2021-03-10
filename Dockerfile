@@ -1,10 +1,10 @@
 # ----------------------------------
-# Environment: debian:buster-slim
-# Minimum Panel Version: 0.7.X
+# Environment: Debian
+# Pavlov VR Docker Format
 # ----------------------------------
 FROM debian:buster-slim
 
-LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
+LABEL author="Noah" maintainer="noah@noahserver.online"
 
 ENV DEBIAN_FRONTEND noninteractive
 
