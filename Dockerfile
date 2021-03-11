@@ -20,7 +20,12 @@ RUN  apt install -y gcc g++ libgcc1 lib32gcc1 gdb libc6 libstdc++6 git wget curl
       libfontconfig libicu60 libiculx60 icu-devtools libunwind8 libssl1.0.0 libssl1.0-dev sqlite3 libsqlite3-dev libmariadbclient-dev libduktape202 libzip4 locales ffmpeg apt-transport-https init-system-helpers \
       libcurl3-gnutls libjsoncpp1 libleveldb1v5 liblua5.1-0 libluajit-5.1-2 libsqlite3-0 rapidjson-dev
 
-## install Repositories
+## install Software Properties
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    rm -rf /var/lib/apt/lists/*
+
+## install required rpository
 RUN  add-apt-repository -y ppa:mhier/libboost-latest 
 
 ## configure locale
