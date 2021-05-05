@@ -1,6 +1,6 @@
 # ----------------------------------
 # Environment: Debian
-# Pavlov VR Docker Format
+# Main Docker Format
 # ----------------------------------
 FROM debian:buster-slim
 
