@@ -2,7 +2,7 @@
 # Environment: debian:buster-slim 
 # Pavlov Update Server
 # ----------------------------------
-FROM quay.io/m1dn1ght/main:Debian-Enhanced
+FROM docker.noahserver.online:5050/noah/forestimages:latest
 
 LABEL author="Noah Smith" maintainer="noah@noahserver.online"
 
