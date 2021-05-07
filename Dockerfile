@@ -3,7 +3,7 @@
 # Environment: Ubuntu
 # ForestRacks.com | NoahServer.online
 # ----------------------------------
-FROM  pull.noahserver.online/noah/forestimages:base-ubuntu-noah
+FROM  docker.noahserver.online:5050/noah/forestimages:base-ubuntu-noah
 
 LABEL author="Noah Smith" maintainer="noah@noahserver.online"
 
