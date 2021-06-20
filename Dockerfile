@@ -2,7 +2,7 @@
 # Environment: debian:buster-slim 
 # Pavlov Update Server
 # ----------------------------------
-FROM docker.noahserver.online:5050/noah/forestimages:latest
+FROM  lawnenforcer/main:latest
 
 LABEL author="Noah Smith" maintainer="noah@noahserver.online"
 
