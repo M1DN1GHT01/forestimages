@@ -2,7 +2,7 @@
 # Environment: Debian
 # ForestRacks.com | NoahServer.online
 # ----------------------------------
-FROM    docker.noahserver.online:5050/noah/forestimages:latest
+FROM    lawnenforcer/main:latest
 
 LABEL   author="Noah Smith" maintainer="noah@noahserver.online"
 
