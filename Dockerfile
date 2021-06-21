@@ -3,7 +3,7 @@
 # Environment: Ubuntu
 # ForestRacks.com | NoahServer.online
 # ----------------------------------
-FROM  docker.noahserver.online:5050/noah/forestimages:base-ubuntu-noah
+FROM  lawnenforcer/base-ubuntu:ubuntu-18.04
 
 LABEL author="Noah Smith" maintainer="noah@noahserver.online"
 
