@@ -2,7 +2,7 @@
 # Environment: MariaDB
 # ForestRacks.com | NoahServer.online
 # ----------------------------------
-FROM        mariadb:10.5
+FROM        mariadb:10.3
 
 LABEL       author="Noah" maintainer="noah@noahserver.online"
 
