@@ -2,22 +2,18 @@
 # Base Minecraft Docker File
 # NoahServer.Online | ForestRacks.com
 # ----------------------------------
-FROM        openjdk:8-jre-slim
+FROM        openjdk:8-alpine
 
 LABEL       author="Noah Smith" maintainer="noah@noahserver.online"
 
-RUN apt-get update -y \
- && apt-get install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 \
- && useradd -d /home/container -m container
- 
+RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite fontconfig \
+    && adduser --disabled-password --home /home/container container
+
 USER container
 ENV  USER=container HOME=/home/container
 
-USER        container
-ENV         USER=container HOME=/home/container
+WORKDIR /home/container
 
-WORKDIR     /home/container
+COPY ./entrypoint.sh /entrypoint.sh
 
-COPY        ./entrypoint.sh /entrypoint.sh
-
-CMD         ["/bin/bash", "/entrypoint.sh"]
+CMD ["/bin/bash", "/entrypoint.sh"]
