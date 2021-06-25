@@ -3,7 +3,7 @@
 # Environment: Ubuntu
 # ForestRacks.com | NoahServer.online
 # ----------------------------------
-FROM  lawnenforcer/base-ubuntu:ubuntu-18.04
+FROM  lawnenforcer/main:Ubuntu-18.04
 
 LABEL author="Noah Smith" maintainer="noah@noahserver.online"
 
