@@ -1,4 +1,4 @@
-FROM openjdk:16-jdk-alpine
+FROM lawnenforcer/main:Alpine-Java11
 
 RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite fontconfig \
     && adduser --disabled-password --home /home/container container
