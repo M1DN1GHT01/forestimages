@@ -2,7 +2,7 @@ FROM        node:14-alpine3.13
 
 LABEL       author="Noah" maintainer="noah@noahserver.online"
 
-RUN         apk add --no-cache --update libc6-compat ffmpeg git \
+RUN         apk add --no-cache --update libc6-compat make ffmpeg git \
             && adduser -D -h /home/container container
 
 USER        container
