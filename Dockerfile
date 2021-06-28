@@ -7,7 +7,7 @@ FROM        python:3.8-alpine3.13
 
 LABEL       author="Noah" maintainer="noah@noahserver.online"
 
-RUN         apk add --no-cache --update git \
+RUN         apk add --no-cache --update git python3 py3-pip \
             && adduser -D -h /home/container container
 
 USER        container
