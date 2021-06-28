@@ -1,13 +1,13 @@
 # ----------------------------------
 # Environment: Debian
-# Main Docker Format
+# Main Debian Discord.js Format
 # ----------------------------------
 FROM        node:15.14-buster-slim
 
 LABEL       author="Noah" maintainer="noah@noahserver.online"
 
 RUN         apt update \
-            && apt -y install ffmpeg iproute2 git g++ gcc sqlite3 python3 ca-certificates dnsutils iputils-ping build-essential \
+            && apt -y install ffmpeg iproute2 git g++ gcc sqlite3 python3 ca-certificates dnsutils iputils-ping build-essential autoconf automake libtool \
             && useradd -m -d /home/container container
 
 USER        container
