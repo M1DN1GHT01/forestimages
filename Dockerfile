@@ -1,16 +1,12 @@
-FROM        mongo:4.4.6-bionic
+FROM postgres:13.1-alpine
 
-LABEL       author="Noah Smith" maintainer="noah@noahserver.online"
+LABEL author="Noah" maintainer="noah@noahserver.online"
 
-ENV         DEBIAN_FRONTEND noninteractive
+RUN adduser -D -h /home/container container
 
-RUN         apt update -y \
-            && apt install -y netcat iproute2 \
-            && useradd -d /home/container -m container -s /bin/bash
+USER container
+ENV HOME /home/container
+WORKDIR /home/container
 
-USER        container
-ENV         USER=container HOME=/home/container
-WORKDIR     /home/container
-
-COPY        ./entrypoint.sh /entrypoint.sh
+COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
