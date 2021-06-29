@@ -6,7 +6,7 @@ FROM        lawnenforcer/forestimages:Mono-Base
 
 LABEL       author="Noah Smith" maintainer="noah@noahserver.online"
 
-RUN         apk add --update --no-cache openssl curl sqlite \
+RUN         apk add --update --no-cache openssl curl wget sqlite \
             && adduser -D -h /home/container container
 
 USER        container
