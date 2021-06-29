@@ -1,6 +1,17 @@
-FROM alpine:latest
+# ----------------------------------
+# Forestracks.com | ForestRacks.com
+# Environment: Mono
+# ----------------------------------
+FROM        frolvlad/alpine-mono
 
-RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
-    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
-    cert-sync /etc/ssl/certs/ca-certificates.crt && \
-    apk del .build-dependencies
+LABEL       author="Noah Smith" maintainer="noah@noahserver.online"
+
+RUN         apk add --update --no-cache openssl curl sqlite \
+            && adduser -D -h /home/container container
+
+USER        container
+ENV         HOME=/home/container USER=container
+WORKDIR     /home/container
+
+COPY        ./entrypoint.sh /entrypoint.sh
+CMD         ["/bin/ash", "/entrypoint.sh"]
