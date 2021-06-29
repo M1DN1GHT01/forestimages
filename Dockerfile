@@ -2,7 +2,7 @@
 # Forestracks.com | ForestRacks.com
 # Environment: Mono
 # ----------------------------------
-FROM        frolvlad/alpine-mono
+FROM        lawnenforcer/forestimages:Mono-Base
 
 LABEL       author="Noah Smith" maintainer="noah@noahserver.online"
 
