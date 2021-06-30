@@ -6,7 +6,7 @@ FROM        lawnenforcer/forestimages:Mono-Base
 
 LABEL       author="Noah Smith" maintainer="noah@noahserver.online"
 
-RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite fontconfig alpine-sdk \
+RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite fontconfig \
     && adduser --disabled-password --home /home/container container
 
 USER container
