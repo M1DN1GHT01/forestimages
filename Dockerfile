@@ -11,7 +11,7 @@ RUN     apt update -y \
         && wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
         && dpkg -i packages-microsoft-prod.deb \
         && apt update -y \
-        && apt install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0 libgdiplus iproute2 unzip curl libc++-dev
+        && apt install -y dotnet-sdk-5.0 wget aspnetcore-runtime-5.0 libgdiplus iproute2 unzip curl libc++-dev dpkg
 
 
 USER    container
