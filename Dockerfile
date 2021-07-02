@@ -11,10 +11,11 @@ ENV     DEBIAN_FRONTEND noninteractive
 
 RUN     apt update -y \
         && apt upgrade -y \
+        && apt install wget iproute2 unzip curl -y \
         && wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
         && dpkg -i packages-microsoft-prod.deb \
         && apt update -y \
-        && apt install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0 libgdiplus iproute2 unzip curl
+        && apt install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0 libgdiplus
 
 
 USER    container
