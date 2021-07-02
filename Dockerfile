@@ -2,17 +2,20 @@
 # Environment: Debian, Mono
 # Main Mono Docker Format
 # ----------------------------------
-FROM        mono:5
+FROM    lawnenforcer/main:latest
+FROM    mono:5
 
-LABEL       author="Noah Smith" maintainer="noah@noahserver.online"
+LABEL   author="Noah Smith" maintainer="noah@noahserver.online"
+
+ENV     DEBIAN_FRONTEND noninteractive
 
 RUN     apt update -y \
         && apt upgrade -y \
-        && apt install -y iproute2 unzip wget curl libc++-dev dpkg \
         && wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
         && dpkg -i packages-microsoft-prod.deb \
         && apt update -y \
-        && apt install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0 libgdiplus
+        && apt upgrade -y \
+        && apt install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0 libgdiplus iproute2 unzip curl
 
 
 USER    container
