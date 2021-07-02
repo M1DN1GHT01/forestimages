@@ -11,7 +11,7 @@ ENV     DEBIAN_FRONTEND noninteractive
 
 RUN     apt update -y \
         && apt upgrade -y \
-        && apt install wget iproute2 unzip curl -y \
+        && apt install wget iproute2 unzip curl apt-transport-https -y \
         && wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
         && dpkg -i packages-microsoft-prod.deb \
         && apt update -y \
