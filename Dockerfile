@@ -2,7 +2,6 @@
 # Environment: Debian, Mono
 # Main Mono Docker Format
 # ----------------------------------
-FROM    lawnenforcer/main:latest
 FROM    mono:5
 
 LABEL   author="Noah Smith" maintainer="noah@noahserver.online"
