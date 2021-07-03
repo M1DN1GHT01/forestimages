@@ -1,4 +1,4 @@
-FROM        node:14.17.0-buster-slim
+FROM        node:12-buster-slim
 
 LABEL       author="Noah" maintainer="noah@noahserver.online"
 
