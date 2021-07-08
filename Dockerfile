@@ -1,4 +1,4 @@
-FROM        frolvlad/alpine-glibc
+FROM        lawnenforcer/main:Base-Glibc
 
 LABEL author="Noah" maintainer="noah@noahserver.online"
 
