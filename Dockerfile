@@ -1,5 +1,5 @@
 # ----------------------------------
-FROM        lawnenforcer/main:latest
+FROM        lawnenforcer/main:Ubuntu-18.04
 
 MAINTAINER  Noah Smith
 
