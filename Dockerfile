@@ -1,4 +1,4 @@
-FROM        node:16.6.1-alpine3.14
+FROM        node:16-alpine3.14
 
 LABEL       author="Noah" maintainer="noah@noahserver.online"
 
