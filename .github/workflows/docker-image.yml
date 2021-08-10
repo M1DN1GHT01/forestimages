@@ -3,9 +3,9 @@ name: build latest node
 on:
   push:
     branches:
-      - main
+      - Node-Latest
     paths:
-      - Node-Latest/**
+      - node/**
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -15,12 +15,12 @@ env:
 
 jobs:
   push:
-    name: 'Node-Latest:${{ matrix.Node-Latest }}'
+    name: 'node:${{ matrix.node }}'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        Node-Latest:
+        node:
           - node
 
     steps:
@@ -49,9 +49,9 @@ jobs:
 
       - uses: docker/build-push-action@v2
         with:
-          context: ./Node-Latest/${{ matrix.Node-Latest }}
-          file: ./Node-Latest/${{ matrix.Node-Latest }}/Dockerfile
+          context: ./Node-Latest/${{ matrix.node }}
+          file: ./Node-Latest/${{ matrix.node }}/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/M1DN1GHT01/Node-Latest:${{ matrix.Node-Latest }}
+            ghcr.io/M1DN1GHT01/Node-Latest:${{ matrix.node }}
