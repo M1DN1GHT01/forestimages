@@ -21,7 +21,7 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - node
+          - node-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -49,9 +49,9 @@ jobs:
 
       - uses: docker/build-push-action@v2
         with:
-          context: ./Node-Latest/${{ matrix.node }}
-          file: ./Node-Latest/${{ matrix.node }}/Dockerfile
+          context: ./node/${{ matrix.node }}
+          file: ./node/${{ matrix.node }}/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/M1DN1GHT01/Node-Latest:${{ matrix.node }}
+            ghcr.io/M1DN1GHT01/node:${{ matrix.node }}
